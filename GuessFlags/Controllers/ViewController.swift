@@ -14,22 +14,32 @@ class ViewController: UIViewController, MKMapKitDelegate {
     
     @IBOutlet var mapView : MKMapview!
 
+    //Input Fields
+    @IBOutlet var startDestinationField : UITextField!
+    @IBOutlet var endDestinationField : UITextField!
+
+
+    private var LocationData = [Location]()
+    private var locationHandler = LocationHandler()
+
     override func viewDidLoad(){
         super.viewDidLoad()
 
         mapView.delegate = self
-
+        locationHandler.delegate = self
     }
 
 
-    //get device location and set
-    func getLocation(){
-        // 2.
-       // let deviceLocation = 
-        let sourceLocation = CLLocationCoordinate2D(latitude: 40.759011, longitude: -73.984472)
-        let destinationLocation = CLLocationCoordinate2D(latitude: 40.748441, longitude: -73.985564)
-    }
-
+   
 
 }
+
+extension ViewController : LocationHandlerDelegate{
+    //get device location and set
+    func getLocation(){
+       
+    }
+}
+
+ 
 
